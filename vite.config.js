@@ -1,13 +1,27 @@
-import { defineConfig } from 'vite';
-import laravel from 'laravel-vite-plugin';
-import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from "vite";
+import laravel from "laravel-vite-plugin";
+import vue from "@vitejs/plugin-vue"; // Import the Vue plugin
 
 export default defineConfig({
     plugins: [
         laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js'],
+            input: [
+                "resources/css/app.css",
+                "resources/js/app.js",
+                // Add your module's entry points here
+                "Modules/Contact/Resources/assets/js/app.js",
+                "Modules/Contact/Resources/assets/sass/app.scss",
+            ],
             refresh: true,
         }),
-        tailwindcss(),
+        vue({
+            // Add the Vue plugin
+            template: {
+                transformAssetUrls: {
+                    base: null,
+                    includeAbsolute: false,
+                },
+            },
+        }),
     ],
 });
