@@ -51,7 +51,7 @@ export default defineConfig({
 //export const paths = getFilePaths(assetsDir);
 
 
-//export const paths = [
-//    'Modules/Contact/resources/assets/sass/app.scss',
-//    'Modules/Contact/resources/assets/js/app.js',
-//];
+export const paths = [
+   'Modules/Contact/resources/assets/sass/app.scss',
+   'Modules/Contact/resources/assets/js/app.js',
+];
